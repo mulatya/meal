@@ -29,6 +29,7 @@ import { Task } from './task.model';
        <button (click)="finishedEditing()">Done</button>
      </div>
    </div>
+   <new-task></new-task>
  </div>
  `
 })
