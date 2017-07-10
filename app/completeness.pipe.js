@@ -20,17 +20,17 @@ var CompletenessPipe = (function () {
         console.log(word5);
         console.log(word6);
         var output = [];
-        if (desiredCompleteness === "notDone") {
+        if (desiredCompleteness === "lowCalories") {
             for (var i = 0; i < input.length; i++) {
-                if (input[i].done === false) {
+                if (input[i].calories < 500) {
                     output.push(input[i]);
                 }
             }
             return output;
         }
-        else if (desiredCompleteness === "isDone") {
+        else if (desiredCompleteness === "highCalories") {
             for (var i = 0; i < input.length; i++) {
-                if (input[i].done === true) {
+                if (input[i].calories > 500) {
                     output.push(input[i]);
                 }
             }

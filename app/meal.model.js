@@ -1,12 +1,12 @@
 "use strict";
-var Task = (function () {
-    function Task(meal, description, calories) {
+var Meal = (function () {
+    function Meal(meal, description, calories) {
         this.meal = meal;
         this.description = description;
         this.calories = calories;
         this.done = false;
     }
-    return Task;
+    return Meal;
 }());
-exports.Task = Task;
-//# sourceMappingURL=task.model.js.map
+exports.Meal = Meal;
+//# sourceMappingURL=meal.model.js.map

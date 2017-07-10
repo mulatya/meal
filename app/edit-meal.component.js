@@ -9,30 +9,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var task_model_1 = require('./task.model');
-var EditTaskComponent = (function () {
-    function EditTaskComponent() {
+var meal_model_1 = require('./meal.model');
+var EditmealComponent = (function () {
+    function EditmealComponent() {
         this.doneClickedSender = new core_1.EventEmitter();
     }
-    EditTaskComponent.prototype.doneClicked = function () {
+    EditmealComponent.prototype.doneClicked = function () {
         this.doneClickedSender.emit();
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', task_model_1.Task)
-    ], EditTaskComponent.prototype, "childSelectedTask", void 0);
+        __metadata('design:type', meal_model_1.Meal)
+    ], EditmealComponent.prototype, "childSelectedmeal", void 0);
     __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
-    ], EditTaskComponent.prototype, "doneClickedSender", void 0);
-    EditTaskComponent = __decorate([
+    ], EditmealComponent.prototype, "doneClickedSender", void 0);
+    EditmealComponent = __decorate([
         core_1.Component({
-            selector: 'edit-task',
-            template: "\n    <div *ngIf=\"childSelectedTask\">\n      <h1>Edit Meal</h1>\n      <div>\n        <label>Enter Meal:</label>\n        <input [(ngModel)]=\"childSelectedTask.meal\">\n      </div>\n      <div>\n        <label>Enter Task Description:</label>\n        <input [(ngModel)]=\"childSelectedTask.description\">\n      </div>\n      <div>\n        <label>Enter Task ID:</label>\n        <input [(ngModel)]=\"childSelectedTask.id\">\n        <button (click)=\"doneClicked()\">Done</button>\n      </div>\n    </div>\n  "
+            selector: 'edit-meal',
+            template: "\n    <div *ngIf=\"childSelectedmeal\">\n      <h1>Edit Meal</h1>\n      <div>\n        <label>Enter Meal:</label>\n        <input [(ngModel)]=\"childSelectedmeal.meal\">\n      </div>\n      <div>\n        <label>Enter  Description:</label>\n        <input [(ngModel)]=\"childSelectedmeal.description\">\n      </div>\n      <div>\n        <label>Enter calories:</label>\n        <input [(ngModel)]=\"childSelectedmeal.id\">\n        <button (click)=\"doneClicked()\">Done</button>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], EditTaskComponent);
-    return EditTaskComponent;
+    ], EditmealComponent);
+    return EditmealComponent;
 }());
-exports.EditTaskComponent = EditTaskComponent;
-//# sourceMappingURL=edit-task.component.js.map
+exports.EditmealComponent = EditmealComponent;
+//# sourceMappingURL=edit-meal.component.js.map

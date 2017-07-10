@@ -1,12 +1,23 @@
 h1 {
-  color: blue;
+  font-style: italic;
+  text-align: center;
+
+}
+
+.col-md-4{
+  color: 131616;
 }
 
 
-/*.task-list {
+/*.meal-list {
   border: 1px solid blue;
   border-radius: 8px;
   padding: 10px;
   width: 25%;
   background-color: LightBlue;
 }*/
+.header{
+  background-color: #grey;
+  text-decoration-color: white;
+
+}

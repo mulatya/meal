@@ -1,51 +1,65 @@
 import { Component } from '@angular/core';
-import { Task } from './task.model';
+import { Meal } from './meal.model';
 
 
 @Component({
   selector: 'my-app',
   template: `
   <div class="container">
-   <h1>My First Angular 2 App</h1>
-   <div *ngFor="let currentTask of tasks">
-     <h3>{{ currentTask.meal }}</h3>
-     <h3>{{ currentTask.description }}</h3>
-     <h3>{{ currentTask.calories }}</h3>
-     <button (click)="showDetails(currentTask)">Edit</button>
+  <div class = "header">
+   <h1>Meal Tracker</h1>
    </div>
-   <div *ngIf="selectedTask">
-     <h1>Edit Task</h1>
+
+
+   <meal-list
+      [childmealList]="meals"
+      (clickSender)="showDetails($event)"
+     ></meal-list>
+   <div class = row>
+
+   <div class="col-md-4">
+   <div class="container">
+   <div *ngIf="selectedmeal">
+     <h2>Edit meal</h2>
      <div>
        <label>Enter meal:</label>
-       <input [(ngModel)]="selectedTask.meal">
+       <input [(ngModel)]="selectedmeal.meal">
      </div>
      <div>
-       <label>Enter Task Description:</label>
-       <input [(ngModel)]="selectedTask.description">
+       <label>Enter meal Description:</label>
+       <input [(ngModel)]="selectedmeal.description">
      </div>
      <div>
        <label>Enter calories:</label>
-       <input [(ngModel)]="selectedTask.calories">
+       <input [(ngModel)]="selectedmeal.calories">
        <button (click)="finishedEditing()">Done</button>
      </div>
    </div>
-   <new-task></new-task>
- </div>
+   <new-meal
+       (newMealSender)="addmeal($event)"
+     ></new-meal>
+     </div>
+     </div>
+     </div>
+
  `
 })
 
 export class AppComponent {
- public tasks: Task[] = [
-     new Task("-Do List app.","fyufvvuivui", 0),
-     new Task("vbwbvw ew","Learn Kung Fu.", 1),
-     new Task("ewbvbvionvweiovwe","Learn Kung Fu.", 2),
-     new Task("iwevvw wvvwi","Learn Kung Fu.", 3)
+ public meals: Meal[] = [
+     new Meal("Hamburger","It didnt finish it", 203),
+     new Meal("Fries","They were nice", 647),
+     new Meal("Chicken","It was delicious", 254),
+     new Meal("Mantou","Taste like chinese", 55)
  ];
- selectedTask: Task = this.tasks[0];
- showDetails(clickedTask: Task) {
-   this.selectedTask = clickedTask;
+ selectedmeal: Meal = this.meals[0];
+ showDetails(clickedmeal: Meal) {
+   this.selectedmeal = clickedmeal;
  }
  finishedEditing() {
-   this.selectedTask = null;
+   this.selectedmeal = null;
  }
+ addmeal(newmealFromChild: Meal) {
+    this.meals.push(newmealFromChild);
+  }
 }

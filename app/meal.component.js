@@ -9,25 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var task_model_1 = require('./task.model');
-var TaskComponent = (function () {
-    function TaskComponent() {
+var meal_model_1 = require('./meal.model');
+var mealComponent = (function () {
+    function mealComponent() {
     }
-    TaskComponent.prototype.toggleDone = function (setCompleteness) {
-        this.task.done = setCompleteness;
+    mealComponent.prototype.toggleDone = function (setCompleteness) {
+        this.meal.done = setCompleteness;
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', task_model_1.Task)
-    ], TaskComponent.prototype, "task", void 0);
-    TaskComponent = __decorate([
+        __metadata('design:type', meal_model_1.Meal)
+    ], mealComponent.prototype, "meal", void 0);
+    mealComponent = __decorate([
         core_1.Component({
-            selector: 'task-display',
-            template: "\n  <div>\n    <input *ngIf=\"task.done === true\" type=\"checkbox\" checked (click)=\"toggleDone(false)\"/>\n    <input *ngIf=\"task.done === false\" type=\"checkbox\" (click)=\"toggleDone(true)\"/>\n    <label>{{ task.description }}</label>\n  </div>\n  "
+            selector: 'meal-display',
+            template: "\n  <div>\n    <input *ngIf=\"meal.done === true\" type=\"checkbox\" checked (click)=\"toggleDone(false)\"/>\n    <input *ngIf=\"meal.done === false\" type=\"checkbox\" (click)=\"toggleDone(true)\"/>\n    <label>{{ meal.description }}</label>\n  </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
-    ], TaskComponent);
-    return TaskComponent;
+    ], mealComponent);
+    return mealComponent;
 }());
-exports.TaskComponent = TaskComponent;
-//# sourceMappingURL=task.component.js.map
+exports.mealComponent = mealComponent;
+//# sourceMappingURL=meal.component.js.map

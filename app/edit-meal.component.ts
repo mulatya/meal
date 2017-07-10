@@ -1,30 +1,30 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from './task.model';
+import { Meal } from './meal.model';
 
 @Component({
-  selector: 'edit-task',
+  selector: 'edit-meal',
   template: `
-    <div *ngIf="childSelectedTask">
+    <div *ngIf="childSelectedmeal">
       <h1>Edit Meal</h1>
       <div>
         <label>Enter Meal:</label>
-        <input [(ngModel)]="childSelectedTask.meal">
+        <input [(ngModel)]="childSelectedmeal.meal">
       </div>
       <div>
-        <label>Enter Task Description:</label>
-        <input [(ngModel)]="childSelectedTask.description">
+        <label>Enter  Description:</label>
+        <input [(ngModel)]="childSelectedmeal.description">
       </div>
       <div>
-        <label>Enter Task ID:</label>
-        <input [(ngModel)]="childSelectedTask.id">
+        <label>Enter calories:</label>
+        <input [(ngModel)]="childSelectedmeal.id">
         <button (click)="doneClicked()">Done</button>
       </div>
     </div>
   `
 })
 
-export class EditTaskComponent {
-  @Input() childSelectedTask: Task;
+export class EditmealComponent {
+  @Input() childSelectedmeal: Meal;
   @Output() doneClickedSender = new EventEmitter();
   doneClicked() {
     this.doneClickedSender.emit();
