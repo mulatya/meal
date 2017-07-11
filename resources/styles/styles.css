@@ -1,7 +1,6 @@
 h1 {
   font-style: italic;
   text-align: center;
-  text-decoration-color: white;
 
 }
 
@@ -18,7 +17,5 @@ h1 {
   background-color: LightBlue;
 }*/
 .header{
-  background-color: #grey;
-  text-decoration-color: white;
-
+  background-color: grey;
 }

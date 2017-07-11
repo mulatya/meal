@@ -16,7 +16,7 @@ export class CompletenessPipe implements PipeTransform {
     console.log(word6);
 
     var output: Meal[] = [];
-    if(desiredCompleteness === "lowCalories") {
+    if (desiredCompleteness === "lowCalories") {
       for (var i = 0; i < input.length; i++) {
         if (input[i].calories < 500) {
           output.push(input[i]);

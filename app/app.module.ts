@@ -21,7 +21,7 @@ import { mealComponent } from './meal.component';
     CompletenessPipe,
     mealComponent,
   ],
-  bootstrap:    [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }
